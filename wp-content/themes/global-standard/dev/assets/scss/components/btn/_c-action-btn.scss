@@ -1,0 +1,76 @@
+@use "global/" as g;
+
+.c-action-btn {
+  display: block;
+  border: 2px solid var(--c-accent);
+  width: min(g.rem(295), 100%);
+  padding: g.rem(23.5) g.rem(45);
+  text-align: center;
+  transition: all 0.3s;
+
+  @include g.mq("md") {
+    padding: g.rem(35) g.rem(55);
+    max-width: g.rem(315);
+    width: 100%;
+  }
+}
+
+.c-action-btn__text {
+  display: inline-block;
+  font-size: g.rem(16);
+  color: var(--c-accent);
+  font-weight: var(--f-weight-medium);
+  line-height: 1;
+  font-family: var(--f-family-sub);
+  transition: all 0.3s;
+  font-style: italic;
+
+  @include g.mq("md") {
+    font-size: g.rem(24);
+  }
+}
+
+// icon付きbtn
+
+.c-action-btn._btn-icon {
+  position: relative;
+}
+
+.c-action-btn__icon {
+  display: inline-block;
+  position: absolute;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-image: url("../images/arrow-right.svg");
+  background-color: var(--c-accent);
+  mask-size: 100% 100%;
+  width: g.rem(20);
+  height: g.rem(13);
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  margin-right: g.rem(20);
+  transition: all 0.3s;
+
+  @include g.mq("md") {
+    margin-right: g.rem(29);
+  }
+}
+
+// hover style
+.c-action-btn:hover,
+.c-action-btn:focus {
+  @include g.mq("md") {
+    opacity: initial;
+    background-color: var(--c-accent);
+
+    .c-action-btn__text {
+      color: var(--c-sub);
+    }
+
+    .c-action-btn__icon {
+      background-color: var(--c-sub);
+      margin-right: g.rem(23);
+    }
+  }
+}

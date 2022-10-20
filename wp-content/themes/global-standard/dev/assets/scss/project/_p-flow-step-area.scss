@@ -1,0 +1,7 @@
+@use "global/" as g;
+
+.p-flow-step-area {
+  @include g.mq("md") {
+    display: flex;
+  }
+}

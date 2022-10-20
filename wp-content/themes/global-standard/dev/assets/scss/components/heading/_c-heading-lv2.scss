@@ -1,0 +1,8 @@
+@use "global" as g;
+
+.c-heading-lv2 {
+  font-size: g.rem(24);
+  line-height: g.l-height(35, 24);
+  font-weight: var(--f-weight-bold);
+  color: var(--c-sub);
+}

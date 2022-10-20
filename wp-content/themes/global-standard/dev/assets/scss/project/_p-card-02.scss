@@ -1,0 +1,92 @@
+@use "global/" as g;
+
+.p-card-02 {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  top: 0;
+
+  @include g.mq("md") {
+    height: 100%;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+      .p-card-02__icon {
+        background-color: var(--c-accent);
+      }
+    }
+  }
+}
+
+.p-card-02__title {
+  font-size: g.rem(16);
+  font-weight: var(--f-weight-bold);
+  line-height: g.l-height(24, 16);
+  margin-top: g.rem(12);
+  order: 1;
+  color: var(--c-base);
+  flex: 1;
+
+  @include g.mq("md") {
+    margin-top: g.rem(16);
+  }
+}
+
+.p-card-02__info {
+  margin-top: g.rem(12);
+  color: var(--c-base);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.p-card-02__category {
+  display: inline-block;
+  line-height: 1;
+  font-size: max(13px, g.rem(14));
+  padding: g.rem(8) g.rem(16);
+  border: 1px solid var(--c-base);
+}
+
+.p-card-02__icon {
+  display: inline-block;
+  width: g.rem(29);
+  max-width: 100%;
+  height: g.rem(29);
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: var(--c-base);
+  mask-image: url("../images/circle-arrow.svg");
+  transition: all 0.3s;
+  flex-shrink: 0;
+  margin-left: g.rem(8);
+
+  @include g.mq("md") {
+    margin-right: g.rem(7);
+  }
+}
+
+.p-card-02__thumb {
+  width: 100%;
+  background-color: var(--c-base);
+  position: relative;
+  order: 2;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 74.9253%;
+  }
+}
+
+.p-card-02__thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

@@ -1,0 +1,41 @@
+@use "global" as g;
+
+.p-sp-modal {
+  height: calc(100vh - 60px);
+  width: 100%;
+  background-color: var(--c-main);
+  z-index: g.z-index("modal-nav");
+  position: fixed;
+  top: 60px;
+  left: 0;
+  display: none;
+  overflow: auto;
+  padding: g.rem(50) 0;
+}
+
+.p-sp-modal__wrapper {
+  width: 100%;
+  max-width: g.rem(295);
+  margin: 0 auto;
+}
+
+.p-sp-modal__item:not(:first-child) {
+  margin-top: g.rem(24);
+}
+
+.p-sp-modal__link {
+  display: block;
+  color: var(--c-base);
+  font-size: g.rem(16);
+  line-height: g.l-height(24, 16);
+  text-align: center;
+  padding: g.rem(8) 0;
+}
+
+.p-sp-modal__btn-wrapper {
+  margin-top: g.rem(40);
+}
+
+.p-sp-modal__btn {
+  margin-top: g.rem(32);
+}

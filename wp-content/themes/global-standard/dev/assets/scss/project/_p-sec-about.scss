@@ -1,0 +1,79 @@
+@use "global" as g;
+
+.p-sec-about__content {
+  overflow: hidden;
+}
+
+.p-sec-about__bg {
+  position: absolute;
+  height: g.rem(800);
+  left: 61.6%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  margin-right: calc(50% - 50vw);
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--c-main);
+    opacity: 0.8;
+  }
+}
+
+.p-sec-about__inner {
+  @include g.mq("md") {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding-top: g.rem(105);
+    padding-bottom: g.rem(93);
+  }
+}
+
+.p-sec-about__skew {
+  padding-bottom: g.rem(136);
+}
+
+.p-sec-about__skew::before {
+  background: linear-gradient(
+    transparent 0%,
+    transparent 14%,
+    var(--c-main-03) 14%,
+    var(--c-main-03) 96.5%,
+    transparent 96.5%,
+    transparent 100%
+  );
+
+  @include g.mq("md") {
+    background: linear-gradient(
+      transparent 0%,
+      transparent 27%,
+      var(--c-main-03) 27%,
+      var(--c-main-03) 86%,
+      transparent 86%,
+      transparent 100%
+    );
+  }
+}
+
+.p-sec-about__broken {
+  width: 100%;
+  margin-top: g.rem(32);
+  @include g.mq("md") {
+    margin-top: g.rem(26);
+    margin-left: g.rem(40);
+    flex: 1;
+  }
+}
+
+.p-sec-about__text {
+  margin-top: g.rem(62);
+  @include g.mq("md") {
+    flex-shrink: 0;
+    margin-top: g.rem(107);
+    width: min(g.rem(379), 100%);
+  }
+}

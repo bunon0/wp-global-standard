@@ -1,0 +1,15 @@
+@use "global/" as g;
+
+.u-sp-hidden {
+  display: none;
+
+  @include g.mq("md") {
+    display: inherit;
+  }
+}
+
+.u-pc-hidden {
+  @include g.mq("md") {
+    display: none;
+  }
+}

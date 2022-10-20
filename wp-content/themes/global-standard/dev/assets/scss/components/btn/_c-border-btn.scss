@@ -1,0 +1,69 @@
+@use "global/" as g;
+
+.c-border-btn {
+  display: inline-block;
+  width: min(g.rem(295), 100%);
+  background-color: var(--c-base);
+  color: var(--c-main);
+  font-size: max(13px, g.rem(14));
+  text-align: center;
+  line-height: 1;
+  border: 1px solid var(--c-main);
+  padding: g.rem(28) g.rem(34);
+  transition: 0.3s;
+  position: relative;
+
+  @include g.mq("md") {
+    width: auto;
+    font-size: g.rem(16);
+    padding: g.rem(27) g.rem(87);
+
+    &:hover,
+    &:active {
+      opacity: initial;
+      color: var(--c-base);
+      background-color: var(--c-main);
+    }
+  }
+}
+
+// icon付き
+.c-border-btn._btn-icon {
+  @include g.mq("md") {
+    padding: g.rem(27) g.rem(79);
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: g.rem(18);
+    height: g.rem(12);
+    mask-image: url("../images/arrow-right02.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--c-main);
+    mask-size: 100% 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: g.rem(12);
+    z-index: 1;
+    transition: 0.3s;
+
+    @include g.mq("md") {
+      width: g.rem(21);
+      height: g.rem(14);
+      right: g.rem(18);
+    }
+  }
+}
+
+.c-border-btn._btn-icon:hover,
+.c-border-btn._btn-icon:active {
+  @include g.mq("md") {
+    &::before {
+      background-color: var(--c-base);
+      right: g.rem(12);
+    }
+  }
+}

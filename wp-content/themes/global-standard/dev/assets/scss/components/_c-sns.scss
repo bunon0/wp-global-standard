@@ -1,0 +1,22 @@
+@use "global/" as g;
+
+.c-sns {
+  width: g.rem(32);
+  height: g.rem(32);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: var(--c-sub);
+  mask-size: 100% 100%;
+}
+
+.c-sns._sns-twitter {
+  mask-image: url("../images/icon-twitter.svg");
+}
+
+.c-sns._sns-facebook {
+  mask-image: url("../images/icon-facebook.svg");
+}
+
+.c-sns._sns-instagram {
+  mask-image: url("../images/icon-instagram.svg");
+}

@@ -1,0 +1,24 @@
+@use "global/" as g;
+
+.l-service__top {
+  margin-top: g.rem(48);
+  @include g.mq("md") {
+    margin-top: g.rem(68);
+  }
+}
+
+.l-service__flow {
+  margin-top: g.rem(48);
+  @include g.mq("md") {
+    margin-top: g.rem(168);
+  }
+}
+
+.l-service__qa {
+  margin-top: g.rem(60);
+  margin-bottom: g.rem(100);
+  @include g.mq("md") {
+    margin-top: g.rem(160);
+    margin-bottom: g.rem(160);
+  }
+}

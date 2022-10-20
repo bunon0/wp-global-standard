@@ -1,0 +1,26 @@
+@use "global/" as g;
+
+.p-flow {
+  position: relative;
+  padding: g.rem(60) 0;
+  @include g.mq("md") {
+    padding-top: g.rem(80);
+    padding-bottom: g.rem(120);
+  }
+}
+
+.p-flow__bg {
+  background-position: center;
+}
+
+.p-flow__list {
+  margin-top: g.rem(37);
+  @include g.mq("md") {
+    margin-top: g.rem(58);
+  }
+}
+
+.p-flow__title {
+  text-align: center;
+  color: var(--c-base);
+}

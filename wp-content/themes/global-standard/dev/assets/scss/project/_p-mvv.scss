@@ -1,0 +1,112 @@
+@use "global/" as g;
+
+.p-mvv__item {
+  overflow: hidden;
+  padding-bottom: g.rem(10);
+
+  &:not(:first-child) {
+    margin-top: g.rem(50);
+    @include g.mq("md") {
+      margin-top: g.rem(107);
+    }
+  }
+}
+
+.p-mvv__inner {
+  position: relative;
+}
+
+.p-mvv__bg {
+  position: relative;
+  z-index: g.z-index(index-0);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  @include g.mq("md") {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--c-sub);
+    opacity: 0.2;
+  }
+}
+
+.p-mvv__title {
+  position: absolute;
+  color: var(--c-base);
+  top: g.rem(20);
+  left: g.rem(20);
+  z-index: g.z-index(index-01);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include g.mq("md") {
+    left: calc(g.rem(20) + g.$padding-pc);
+  }
+}
+
+.p-mvv__en {
+  font-family: var(--f-family-sub);
+  font-size: g.rem(52);
+  line-height: g.l-height(63, 52);
+  font-weight: var(--f-weight-medium);
+  font-style: italic;
+  text-transform: uppercase;
+  @include g.mq("md") {
+    font-size: g.rem(100);
+    line-height: g.l-height(121, 100);
+  }
+}
+
+.p-mvv__ja {
+  font-size: g.rem(16);
+  line-height: g.l-height(24, 16);
+  font-weight: var(--f-weight-bold);
+  @include g.mq("md") {
+    font-size: g.rem(24);
+    line-height: g.l-height(35, 24);
+  }
+}
+
+.p-mvv__message {
+  background-color: var(--c-base);
+  padding: g.rem(20) g.rem(20) g.rem(18) g.rem(20);
+  box-shadow: 0 g.rem(3) g.rem(12) rgba(#000, 0.16);
+  margin-top: g.rem(-40);
+  position: relative;
+
+  @include g.mq("md") {
+    padding: g.rem(32) g.rem(40);
+    width: min(g.rem(688), 100%);
+    margin-top: g.rem(-60);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.p-mvv__head {
+  font-size: g.rem(20);
+  line-height: g.l-height(29, 20);
+  font-weight: var(--f-weight-bold);
+  color: var(--c-main);
+  text-align: center;
+  @include g.mq("md") {
+    font-size: g.rem(24);
+    line-height: g.l-height(35, 24);
+  }
+}
+
+.p-mvv__text {
+  margin-top: g.rem(18);
+  @include g.mq("md") {
+    margin-top: g.rem(32);
+  }
+}

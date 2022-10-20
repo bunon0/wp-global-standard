@@ -1,0 +1,31 @@
+// layout
+$container: 1100px;
+$max-content: 1600px;
+$padding-sp: 20px;
+$padding-pc: 50px;
+
+// z-index
+$layer: (
+  "header": 1000,
+  "modal-nav": 990,
+  "index-02": 2,
+  "index-01": 1,
+  "index-0": 0,
+  "-index-01": -1,
+);
+
+// ブレイクポイント
+$xs: 375px; // spサイズ
+$sm: 576px;
+$md: 768px; // tabサイズ
+$lg: 992px;
+$xl: 1280px; // pcサイズ
+$xxl: 1400px;
+$breakpoints: (
+  "xs": "(min-width: #{$xs})",
+  "sm": "(min-width: #{$sm})",
+  "md": "(min-width: #{$md})",
+  "lg": "(min-width: #{$lg})",
+  "xl": "(min-width: #{$xl})",
+  "xxl": "(min-width: #{$xxl})",
+);

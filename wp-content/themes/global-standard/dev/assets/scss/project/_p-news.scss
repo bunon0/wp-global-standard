@@ -1,0 +1,44 @@
+@use "global/" as g;
+
+.p-news__title {
+  font-size: g.rem(20);
+  line-height: g.l-height(40, 20);
+  font-weight: var(--f-weight-bold);
+  @include g.mq("md") {
+    font-size: g.rem(32);
+    line-height: g.l-height(40, 32);
+  }
+}
+
+.p-news__sub {
+  margin-top: g.rem(108);
+  @include g.mq("md") {
+    margin-top: initial;
+  }
+}
+
+.p-news__list {
+  margin-top: g.rem(15);
+  @include g.mq("md") {
+    margin-top: g.rem(28);
+  }
+}
+
+.p-news__item {
+  &:not(:first-child) {
+    margin-top: g.rem(21);
+    @include g.mq("md") {
+      margin-top: g.rem(40);
+    }
+  }
+}
+
+.p-news__pagination {
+  margin-top: g.rem(40);
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  text-align: center;
+  @include g.mq("md") {
+    margin-top: g.rem(58);
+  }
+}

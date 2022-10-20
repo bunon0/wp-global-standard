@@ -1,0 +1,106 @@
+@use "global/" as g;
+
+/* =====================
+ * リセットCSS以外のデフォルトスタイルを調整
+===================== */
+img {
+  height: auto;
+  vertical-align: top;
+}
+
+a {
+  display: inline-block;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity 0.3s;
+
+  @include g.mq("md") {
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+  }
+}
+
+input,
+button[type="submit"],
+textarea,
+select {
+  &:focus {
+    outline: 2px solid var(--c-main);
+  }
+}
+
+/* =====================
+ * Baseスタイル
+===================== */
+:root,
+:root[theme="Default"] {
+  // font
+  --f-family-main: "Noto Sans JP", sans-serif;
+  --f-family-sub: "Fira Sans", sans-serif;
+  --f-font-size: 16px;
+  --f-line-height: 1.6;
+  --f-weight-regular: 400;
+  --f-weight-medium: 500;
+  --f-weight-semibold: 600;
+  --f-weight-bold: 700;
+  --f-weight-black: 900;
+  // color
+  --c-base: #fff;
+  --c-base-rgb: 255, 255, 255;
+  --c-sub: #1a1a1a;
+  --c-sub-rgb: 31, 31, 31;
+  --c-main: #023e78;
+  --c-main-rgb: 2, 62, 120;
+  --c-main-02: #002a52;
+  --c-main-03: #edf3f8;
+  --c-accent: #fff400;
+  --c-accent-02: #e61264;
+  --c-accent-03: #d33365;
+}
+
+html {
+  /* ----------------------------
+  * リキッドレイアウト rootのfont-sizeを可変にして、単位をremで指定することでレイアウトを可変にする
+    // 計算式参考サイト：https://lpeg.info/html/css_calc_font.html
+    // font-size: calc([最小値px] + ([最大値] - [最小値]) * ((100vw - [最小画面幅px]) / ([最大画面幅] - [最小画面幅])));
+    // clampと併用して上限下限を設定すること。しないと無限に変化し続ける
+  * ---------------------------- */
+  // 0 ~ 375px
+  @media (max-width: 375px) {
+    font-size: clamp(12px, g.vw(16, 375), 16px);
+  }
+
+  // 375px ~ $md(768px)
+  @include g.mq("xs") {
+    font-size: 16px;
+  }
+
+  // $md(768px) ~ $container
+  @include g.mq("md") {
+    // prettier-ignore
+    font-size: clamp(
+    12px,
+    calc(12px + (16 - 12) * ((100vw - g.$md) / (g.strip-unit(g.$container) - g.strip-unit(g.$md)))),
+    16px
+  );
+  }
+
+  // container ~ max-screen
+  @media (min-width: g.$container) {
+    font-size: 16px;
+  }
+}
+
+body {
+  font-family: var(--f-family-main);
+  // font-size: var(--f-font-size);
+  font-weight: var(--f-weight-medium);
+  line-height: var(--f-line-height);
+  background-color: var(--c-base);
+  color: var(--c-sub);
+  overflow-wrap: break-word;
+  word-break: break-all;
+}

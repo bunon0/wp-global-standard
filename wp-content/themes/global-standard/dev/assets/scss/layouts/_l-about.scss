@@ -1,0 +1,22 @@
+@use "global/" as g;
+
+.l-about__mvv {
+  margin-top: g.rem(46);
+  @include g.mq("md") {
+    margin-top: g.rem(67);
+  }
+}
+
+.l-about-desc {
+  margin-top: g.rem(50);
+  @include g.mq("md") {
+    margin-top: g.rem(109);
+  }
+}
+
+.l-about__staff {
+  margin-top: g.rem(60);
+  @include g.mq("md") {
+    margin-top: g.rem(120);
+  }
+}

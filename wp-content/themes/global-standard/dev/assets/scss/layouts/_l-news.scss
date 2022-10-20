@@ -1,0 +1,11 @@
+@use "global/" as g;
+
+.l-news__top {
+  margin-top: g.rem(40);
+  margin-bottom: g.rem(100);
+
+  @include g.mq("md") {
+    margin-top: g.rem(70);
+    margin-bottom: g.rem(160);
+  }
+}

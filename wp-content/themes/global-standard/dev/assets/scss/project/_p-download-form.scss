@@ -1,0 +1,216 @@
+@use "global/" as g;
+
+.p-download-form {
+  padding: g.rem(37) g.rem(20) g.rem(40) g.rem(20);
+  background-color: var(--c-main-03);
+  border-radius: g.rem(12);
+  @include g.mq("md") {
+    padding: g.rem(40) g.rem(40);
+  }
+}
+
+.p-download-form._form-h-full {
+  @include g.mq("md") {
+    min-height: g.rem(894);
+  }
+}
+
+.p-download-form__title {
+  font-size: g.rem(24);
+  font-weight: var(--f-weight-bold);
+  @include g.mq("md") {
+    font-size: g.rem(32);
+  }
+}
+
+.p-download-form__main {
+  margin-top: g.rem(36);
+}
+
+.p-download-form__item {
+  &:not(:first-child) {
+    margin-top: g.rem(18);
+    @include g.mq("md") {
+      margin-top: g.rem(32);
+    }
+  }
+}
+
+.p-download-form__label {
+  display: block;
+  position: relative;
+}
+
+.p-download-form__head {
+  display: flex;
+  align-items: center;
+  min-height: calc(1em + g.rem(8));
+}
+
+.p-download-form__heading {
+  font-size: max(14px, g.rem(14));
+  font-weight: var(--f-weight-bold);
+  line-height: 1;
+  @include g.mq("md") {
+    font-size: g.rem(18);
+  }
+}
+
+.p-download-form__tag {
+  font-size: max(10px, g.rem(10));
+  padding: g.rem(3.5) g.rem(8);
+  font-weight: var(--f-weight-bold);
+  background-color: var(--c-accent-02);
+  color: var(--c-base);
+  flex-shrink: 0;
+  margin-left: g.rem(8);
+  @include g.mq("md") {
+    font-size: max(12px, g.rem(12));
+  }
+}
+
+.p-download-form__body {
+  display: block;
+  margin-top: g.rem(6);
+
+  @include g.mq("md") {
+    margin-top: g.rem(13);
+  }
+}
+
+// input style
+.p-download-form__input {
+  width: 100%;
+  padding: g.rem(10) g.rem(14);
+  border: 1px solid #ddd;
+  background-color: var(--c-base);
+  font-size: max(14px, g.rem(14));
+  font-weight: var(--f-weight-medium);
+  border-radius: g.rem(5);
+  @include g.mq("md") {
+    font-size: g.rem(16);
+    padding: g.rem(8.5) g.rem(14);
+  }
+
+  &::placeholder {
+    color: #ccc;
+  }
+}
+
+// checkbox style
+.p-download-form__checkbox {
+  margin-top: g.rem(40);
+  text-align: center;
+}
+
+.p-download-form__checkbox .wpcf7-list-item {
+  margin: 0;
+}
+
+.p-download-form__checkbox > span {
+  padding-left: g.rem(38);
+  display: inline-block;
+  position: relative;
+  @include g.mq("md") {
+    padding-left: g.rem(42);
+  }
+}
+
+.p-download-form__checkbox input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+
+  &:checked + span::after {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &:focus + span::before {
+    outline: 2px solid var(--c-main);
+  }
+}
+
+.p-download-form__checkbox input[type="checkbox"] + span {
+  display: inline-block;
+  font-size: max(12px, g.rem(14));
+  line-height: g.l-height(28, 14);
+  font-weight: var(--f-weight-medium);
+  @include g.mq("md") {
+    font-size: g.rem(16);
+  }
+
+  // 疑似要素チェックボックス
+  &::before {
+    content: "";
+    display: inline-block;
+    width: g.rem(28);
+    height: g.rem(28);
+    border: 1px solid #3e3e3e;
+    background-color: var(--c-base);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    @include g.mq("md") {
+      width: g.rem(32);
+      height: g.rem(32);
+    }
+  }
+
+  // 疑似要素チェックマーク
+  &::after {
+    content: "";
+    visibility: hidden;
+    width: g.rem(18);
+    height: g.rem(18);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-image: url("../images/check.svg");
+    background-color: var(--c-sub);
+    mask-size: 100% 100%;
+    position: absolute;
+    top: g.rem(2);
+    left: g.rem(7);
+    opacity: 0;
+    transition: 0.3s;
+  }
+}
+
+.p-download-form__checkbox input[type="checkbox"] + span a {
+  font-weight: var(--f-weight-bold);
+  text-decoration: underline;
+  margin-right: g.rem(6);
+  @include g.mq("md") {
+    margin-right: g.rem(10);
+  }
+}
+
+.p-download-form__btn {
+  margin-top: g.rem(40);
+  text-align: center;
+
+  .wpcf7-spinner {
+    display: none;
+  }
+}
+
+.p-download-form__message {
+  margin-top: g.rem(40);
+  font-size: max(12px, g.rem(14));
+  line-height: g.l-height(24, 14);
+  font-weight: var(--f-weight-medium);
+
+  p:nth-of-type(n + 2) {
+    margin-top: g.rem(26);
+  }
+}
+
+.p-download-form__message-link {
+  display: block;
+  a {
+    color: var(--c-main);
+    text-decoration: underline;
+    margin-left: g.rem(8);
+    padding: g.rem(14) 0;
+  }
+}

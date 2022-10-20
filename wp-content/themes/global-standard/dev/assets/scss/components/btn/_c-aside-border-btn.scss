@@ -1,0 +1,36 @@
+@use "global/" as g;
+
+.c-aside-border-btn {
+  display: block;
+  width: min(g.rem(295), 100%);
+  background-color: var(--c-main);
+  color: var(--c-base);
+  font-size: g.rem(16);
+  text-align: center;
+  line-height: 1;
+  border: 1px solid var(--c-base);
+  padding: g.rem(25) g.rem(11);
+}
+
+.c-aside-border-btn._btn-small {
+  max-width: g.rem(176);
+  padding: g.rem(26) g.rem(13);
+  font-size: max(13px, g.rem(14));
+  transition: all 0.3s;
+
+  @include g.mq("md") {
+    &:hover,
+    &:active {
+      opacity: initial;
+      color: var(--c-base);
+      background-color: var(--c-main);
+    }
+  }
+}
+
+// color
+.c-aside-border-btn._btn-secondary {
+  color: var(--c-main);
+  background-color: var(--c-base);
+  border: 1px solid var(--c-main);
+}

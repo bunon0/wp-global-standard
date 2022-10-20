@@ -1,0 +1,37 @@
+@use "global/" as g;
+
+.p-g-nav {
+  display: none;
+  @include g.mq("xl") {
+    display: initial;
+    margin-left: g.rem(93);
+  }
+}
+
+.p-g-nav__list {
+  display: flex;
+}
+
+.p-g-nav__item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.p-g-nav__item:not(:first-child):before {
+  content: "／";
+  font-size: max(12px, g.rem(14));
+  display: inline-block;
+  margin: 0 g.rem(16);
+}
+
+.p-g-nav__item:not(:first-child) {
+  // margin-left: g.rem(8);
+}
+
+.p-g-nav__link {
+  font-size: max(13px, g.rem(14));
+  line-height: 1;
+  padding: g.rem(8) 0;
+  color: var(--c-sub);
+  flex-shrink: 0;
+}

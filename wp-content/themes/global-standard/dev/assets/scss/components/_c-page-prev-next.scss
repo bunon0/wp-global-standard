@@ -1,0 +1,22 @@
+@use "global/" as g;
+
+.c-page-prev-next {
+  display: flex;
+  justify-content: space-between;
+}
+
+.c-page-prev-next__item {
+  display: inline-block;
+  font-size: max(12px, g.rem(14));
+  font-weight: var(--f-weight-medium);
+  line-height: g.l-height(20, 14);
+  padding: g.rem(8) g.rem(16);
+  color: var(--c-main);
+  background-color: var(--c-base);
+  border: 1px solid var(--c-main);
+  border-radius: 4px;
+}
+
+.c-page-prev-next__item._next {
+  margin-left: g.rem(8);
+}

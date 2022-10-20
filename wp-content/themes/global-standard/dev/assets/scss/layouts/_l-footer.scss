@@ -1,0 +1,69 @@
+@use "global/" as g;
+
+.l-footer__ad {
+  @include g.mq("md") {
+    display: flex;
+  }
+}
+
+.l-footer__content {
+  background-color: var(--c-sub);
+  padding-top: g.rem(77);
+  padding-bottom: g.rem(13);
+  position: relative;
+
+  @include g.mq("md") {
+    padding-top: g.rem(115);
+  }
+}
+
+.l-footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.l-footer__logo {
+  width: min(g.rem(283), 100%);
+
+  @include g.mq("md") {
+    width: min(g.rem(369), 100%);
+  }
+}
+
+.l-footer__info {
+  color: var(--c-base);
+  margin-top: g.rem(31);
+
+  @include g.mq("md") {
+    margin-top: g.rem(18);
+  }
+}
+
+.l-footer__item {
+  font-size: max(13px, g.rem(14));
+  line-height: g.l-height(24, 14);
+}
+
+.l-footer__copy {
+  font-size: max(12px, g.rem(12));
+  line-height: g.l-height(24, 12);
+  color: var(--c-base);
+  margin-top: g.rem(32);
+
+  @include g.mq("md") {
+    font-size: max(12px, g.rem(14));
+    line-height: g.l-height(24, 14);
+    margin-top: g.rem(76);
+  }
+}
+
+.l-footer__back {
+  right: g.rem(10);
+  bottom: g.rem(20);
+
+  @include g.mq("md") {
+    right: g.rem(20);
+    bottom: g.rem(40);
+  }
+}

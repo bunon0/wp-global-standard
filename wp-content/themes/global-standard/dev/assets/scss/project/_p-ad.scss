@@ -1,0 +1,48 @@
+@use "global" as g;
+
+.p-ad__box {
+  width: 100%;
+  position: relative;
+  padding: g.rem(45) g.rem(g.strip-unit(g.$padding-sp)) g.rem(26);
+
+  @include g.mq("md") {
+    padding-top: g.rem(56);
+    padding-bottom: g.rem(50);
+  }
+}
+
+.p-ad__title {
+  color: var(--c-base);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.p-ad__en {
+  font-size: g.rem(40);
+  font-family: var(--f-family-sub);
+  line-height: g.l-height(48, 40);
+  font-weight: var(--f-weight-medium);
+  text-transform: uppercase;
+  font-style: italic;
+
+  @include g.mq("md") {
+    font-size: g.rem(60);
+    line-height: g.l-height(72, 60);
+  }
+}
+
+.p-ad__ja {
+  font-size: g.rem(16);
+  font-weight: var(--f-weight-bold);
+  line-height: 1;
+  margin-top: g.rem(10);
+
+  @include g.mq("md") {
+    margin-top: g.rem(4);
+  }
+}
+
+.p-ad__btn {
+  margin: g.rem(44) auto 0 auto;
+}

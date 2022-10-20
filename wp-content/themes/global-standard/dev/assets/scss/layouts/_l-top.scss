@@ -1,0 +1,30 @@
+@use "global" as g;
+
+.l-top__about {
+  margin-top: g.rem(60);
+  @include g.mq("md") {
+    margin-top: g.rem(150);
+  }
+}
+
+.l-top__service {
+  margin-top: g.rem(60);
+  @include g.mq("md") {
+    margin-top: g.rem(102);
+  }
+}
+
+.l-top__case {
+  margin-top: g.rem(69);
+
+  @include g.mq("md") {
+    margin-top: initial;
+  }
+}
+
+.l-top__news {
+  margin-top: g.rem(60);
+  @include g.mq("md") {
+    margin-top: g.rem(166);
+  }
+}

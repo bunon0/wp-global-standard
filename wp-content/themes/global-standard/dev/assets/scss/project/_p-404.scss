@@ -1,0 +1,10 @@
+@use "global/" as g;
+
+.p-404__inner {
+  padding-top: g.rem(40);
+  padding-bottom: g.rem(40);
+  @include g.mq("md") {
+    padding-top: g.rem(80);
+    padding-bottom: g.rem(80);
+  }
+}

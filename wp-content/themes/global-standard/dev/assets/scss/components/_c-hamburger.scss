@@ -1,0 +1,52 @@
+@use "global/" as g;
+
+.c-hamburger {
+  height: 100%;
+  padding: g.rem(0);
+}
+
+.c-hamburger__inner {
+  display: block;
+  width: g.rem(27);
+  height: g.rem(16);
+  position: relative;
+}
+
+.c-hamburger__bar {
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  background-color: var(--c-main);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.c-hamburger__bar._bar-top {
+  top: 0;
+}
+
+.c-hamburger__bar._bar-mid {
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.c-hamburger__bar._bar-bottom {
+  bottom: 0;
+}
+
+.c-hamburger._is-active {
+  .c-hamburger__bar._top {
+    transform: rotate(45deg);
+    top: 50%;
+  }
+  .c-hamburger__bar._mid {
+    opacity: 0;
+  }
+  .c-hamburger__bar._bottom {
+    top: 50%;
+    bottom: initial;
+    transform: rotate(-45deg);
+  }
+}

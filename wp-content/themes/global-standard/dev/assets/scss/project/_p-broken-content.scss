@@ -1,0 +1,62 @@
+@use "global/" as g;
+
+.p-broken-content {
+  position: relative;
+  padding: g.rem(40) 0;
+
+  @include g.mq("md") {
+    position: static;
+    padding: 0;
+  }
+}
+
+.p-broken-content__bg {
+  position: absolute;
+  width: 88%;
+  height: 100%;
+  top: 0;
+  right: g.rem(-20);
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+  max-width: g.rem(500);
+
+  @include g.mq("md") {
+    display: none;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--c-main);
+    opacity: 0.8;
+  }
+}
+
+.p-broken-content__img {
+  width: 100%;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 62.6865%;
+    overflow: hidden;
+  }
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.p-broken-content__btn {
+  text-align: right;
+  margin-top: g.rem(32);
+}

@@ -1,0 +1,50 @@
+@use "global/" as g;
+
+.c-sec-title {
+  color: var(--c-main);
+  @include g.mq("md") {
+    display: flex;
+    width: 100%;
+  }
+}
+
+.c-sec-title__en {
+  display: block;
+  text-transform: uppercase;
+  font-family: var(--f-family-sub);
+  font-size: g.rem(52);
+  line-height: g.l-height(63, 52);
+  font-weight: var(--f-weight-medium);
+  font-style: italic;
+
+  @include g.mq("md") {
+    font-size: g.rem(100);
+    line-height: g.l-height(121, 100);
+  }
+}
+
+.c-sec-title__ja {
+  display: block;
+  font-size: g.rem(16);
+  font-weight: var(--f-weight-bold);
+  line-height: 1;
+  margin-top: g.rem(4);
+
+  @include g.mq("md") {
+    font-size: g.rem(24);
+  }
+}
+
+.c-sec-title__btn {
+  display: none;
+  @include g.mq("md") {
+    margin-left: auto;
+    display: flex;
+    margin-top: g.rem(12);
+  }
+}
+
+// color
+._title-secondary {
+  color: var(--c-base);
+}

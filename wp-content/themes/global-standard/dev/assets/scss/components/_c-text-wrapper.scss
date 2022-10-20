@@ -1,0 +1,10 @@
+@use "global" as g;
+
+.c-text-wrapper {
+  font-size: max(13px, g.rem(14));
+  line-height: g.l-height(24, 14);
+}
+
+.c-text-wrapper p + p {
+  margin-top: 1.7em;
+}

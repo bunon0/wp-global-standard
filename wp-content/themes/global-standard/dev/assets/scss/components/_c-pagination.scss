@@ -1,0 +1,61 @@
+@use "global/" as g;
+
+.c-pagination {
+  margin-top: g.rem(40);
+
+  .navigation {
+    margin-top: g.rem(-12);
+    margin-left: g.rem(-6);
+  }
+
+  .page-numbers {
+    font-size: g.rem(16);
+    line-height: 1;
+    font-weight: var(--f-weight-medium);
+    width: g.rem(40);
+    height: g.rem(40);
+    color: #888;
+    background-color: #f8f8f8;
+    margin-top: g.rem(12);
+    margin-left: g.rem(6);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    @include g.mq("md") {
+      width: g.rem(50);
+      height: g.rem(50);
+    }
+  }
+
+  .page-numbers.current {
+    background-color: var(--c-main);
+    color: var(--c-base);
+  }
+
+  .icon {
+    display: inline-block;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: #888;
+    mask-size: 100% 100%;
+    width: g.rem(8);
+    height: g.rem(13);
+    @include g.mq("md") {
+      width: g.rem(9);
+      height: g.rem(16);
+    }
+  }
+
+  .prev .icon {
+    mask-image: url("../images/page-arrow-left.svg");
+  }
+
+  .next .icon {
+    mask-image: url("../images/page-arrow-right.svg");
+  }
+
+  .dots {
+    display: none;
+  }
+}

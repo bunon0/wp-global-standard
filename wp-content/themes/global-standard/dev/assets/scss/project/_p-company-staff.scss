@@ -1,0 +1,54 @@
+@use "global/" as g;
+
+.p-company-staff__inner {
+  @include g.mq("md") {
+    max-width: calc(688px + g.$padding-pc * 2);
+  }
+}
+
+.p-company-staff__title {
+  text-align: center;
+}
+
+.p-company-staff__list {
+  margin-top: g.rem(40);
+  @include g.mq("md") {
+    margin-top: g.rem(60);
+  }
+}
+
+.p-company-staff__item:not(:first-child) {
+  margin-top: g.rem(59);
+  @include g.mq("md") {
+    margin-top: g.rem(60);
+  }
+}
+
+.p-company-staff__skew {
+  padding-bottom: g.rem(156);
+  @include g.mq("md") {
+    padding-bottom: g.rem(184);
+  }
+
+  &::before {
+    background: linear-gradient(
+      transparent 0%,
+      transparent 43%,
+      var(--c-main-03) 43%,
+      var(--c-main-03) 95.5%,
+      transparent 95.5%,
+      transparent 100%
+    );
+
+    @include g.mq("md") {
+      background: linear-gradient(
+        transparent 0%,
+        transparent 55.5%,
+        var(--c-main-03) 55.5%,
+        var(--c-main-03) 98%,
+        transparent 98%,
+        transparent 100%
+      );
+    }
+  }
+}

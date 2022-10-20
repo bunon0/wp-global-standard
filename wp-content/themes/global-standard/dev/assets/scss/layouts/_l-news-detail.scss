@@ -1,0 +1,17 @@
+@use "global/" as g;
+
+.l-news-detail__sub {
+  margin-top: g.rem(100);
+  @include g.mq("md") {
+    margin-top: initial;
+  }
+}
+
+.l-news-detail__wrapper {
+  margin-top: g.rem(46);
+  margin-bottom: g.rem(100);
+  @include g.mq("md") {
+    margin-top: g.rem(67);
+    margin-bottom: g.rem(170);
+  }
+}

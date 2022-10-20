@@ -1,0 +1,45 @@
+@use "global/" as g;
+
+.p-sec-case {
+  position: relative;
+  padding-top: g.rem(60);
+  padding-bottom: g.rem(60);
+
+  @include g.mq("md") {
+    padding-top: g.rem(100);
+    padding-bottom: g.rem(70);
+  }
+}
+
+.p-sec-case__list {
+  margin-top: g.rem(44);
+
+  @include g.mq("md") {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: g.rem(70);
+    margin-top: g.rem(86);
+  }
+}
+
+.p-sec-case__item {
+  width: 100%;
+  max-width: g.rem(335);
+  margin: 0 auto;
+  @include g.mq("md") {
+    max-width: initial;
+  }
+}
+
+.p-sec-case__item:not(:first-child) {
+  margin-top: g.rem(52);
+
+  @include g.mq("md") {
+    margin-top: 0;
+  }
+}
+
+.p-sec-case__btn {
+  text-align: right;
+  margin-top: g.rem(52);
+}

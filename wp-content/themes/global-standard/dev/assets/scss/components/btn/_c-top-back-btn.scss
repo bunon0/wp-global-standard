@@ -1,0 +1,19 @@
+@use "global/" as g;
+
+.c-top-back-btn {
+  position: absolute;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-image: url("../images/arrow-up.svg");
+  background-color: white;
+  mask-size: 100% 100%;
+  width: g.rem(40);
+  height: g.rem(40);
+
+  @include g.mq("md") {
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
+}

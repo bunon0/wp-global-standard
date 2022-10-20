@@ -1,0 +1,35 @@
+@use "global/" as g;
+
+.c-aside-fill-btn {
+  display: block;
+  width: min(g.rem(295), 100%);
+  padding: g.rem(26) g.rem(11);
+  background-color: var(--c-base);
+  color: var(--c-main);
+  font-size: g.rem(16);
+  text-align: center;
+  line-height: 1;
+}
+
+// size
+
+.c-aside-fill-btn._btn-small {
+  max-width: g.rem(176);
+  padding: g.rem(27) g.rem(13);
+  font-size: max(13px, g.rem(14));
+  transition: all 0.3s;
+
+  @include g.mq("md") {
+    &:hover,
+    &:active {
+      opacity: initial;
+      background-color: var(--c-main-02);
+    }
+  }
+}
+
+// color
+.c-aside-fill-btn._btn-secondary {
+  background-color: var(--c-main);
+  color: var(--c-base);
+}

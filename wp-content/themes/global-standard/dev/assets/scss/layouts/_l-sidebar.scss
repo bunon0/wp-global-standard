@@ -1,0 +1,28 @@
+@use "global" as g;
+
+.l-sidebar__title {
+  font-size: g.rem(20);
+  line-height: 1;
+  font-weight: var(--f-weight-bold);
+}
+
+.l-sidebar__article {
+  margin-top: g.rem(23);
+  @include g.mq("md") {
+    margin-top: g.rem(22);
+  }
+}
+
+.l-sidebar__news {
+  margin-top: g.rem(20);
+  @include g.mq("md") {
+    margin-top: g.rem(5);
+  }
+}
+
+.l-sidebar__category-area {
+  margin-top: g.rem(64);
+  @include g.mq("md") {
+    margin-top: g.rem(84);
+  }
+}

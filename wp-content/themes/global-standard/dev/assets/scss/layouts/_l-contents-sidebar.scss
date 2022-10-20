@@ -1,0 +1,21 @@
+@use "global/" as g;
+
+.l-contents-sidebar {
+  @include g.mq("md") {
+    display: flex;
+  }
+}
+
+.l-contents-sidebar__main {
+  @include g.mq("md") {
+    flex: 1;
+  }
+}
+.l-contents-sidebar__sub {
+  width: 100%;
+  @include g.mq("md") {
+    max-width: g.rem(300);
+    margin-left: g.rem(40);
+    flex-shrink: 0;
+  }
+}

@@ -1,0 +1,8 @@
+@use "global/" as g;
+
+.l-case__top {
+  margin-bottom: g.rem(100);
+  @include g.mq("md") {
+    margin-bottom: g.rem(160);
+  }
+}

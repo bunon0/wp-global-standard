@@ -1,0 +1,20 @@
+@use "global/" as g;
+
+.p-qa__inner {
+  @include g.mq("md") {
+    max-width: calc(688px + g.$padding-pc * 2);
+    padding-right: g.$padding-pc;
+    padding-left: g.$padding-pc;
+  }
+}
+
+.p-qa__title {
+  text-align: center;
+}
+
+.p-qa__accordion {
+  margin-top: g.rem(41);
+  @include g.mq("md") {
+    margin-top: g.rem(57);
+  }
+}

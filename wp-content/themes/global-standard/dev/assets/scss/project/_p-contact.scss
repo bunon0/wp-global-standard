@@ -1,0 +1,42 @@
+@use "global/" as g;
+
+.p-contact {
+  padding-top: g.rem(43);
+  padding-bottom: g.rem(100);
+  @include g.mq("md") {
+    padding-top: g.rem(65);
+    padding-bottom: g.rem(180);
+  }
+}
+
+.p-contact__inner {
+  width: 100%;
+  padding: 0 g.rem(g.strip-unit(g.$padding-sp));
+  margin: 0 auto;
+  @include g.mq("md") {
+    max-width: calc(688px + g.$padding-pc * 2);
+    padding: 0 g.rem(g.strip-unit(g.$padding-pc));
+  }
+}
+
+.p-contact__message {
+  font-size: max(12px, g.rem(14));
+  line-height: g.l-height(24, 14);
+
+  a {
+    font-size: max(12px, g.rem(14));
+    line-height: g.l-height(24, 14);
+    font-weight: var(--f-weight-medium);
+    color: var(--c-main);
+    text-decoration: underline;
+    margin-left: g.rem(8);
+    padding: g.rem(16) 0;
+  }
+}
+
+.p-contact__main {
+  margin-top: g.rem(60);
+  @include g.mq("md") {
+    margin-top: g.rem(80);
+  }
+}

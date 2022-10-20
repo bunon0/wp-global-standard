@@ -1,0 +1,44 @@
+@use "global/" as g;
+
+.c-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1;
+}
+
+.c-breadcrumb li {
+  font-size: max(12px, g.rem(12));
+  display: inline-block;
+}
+
+.c-breadcrumb li:not(:last-child) > span {
+  &::after {
+    content: "＞";
+    display: inline-block;
+    font-size: max(12px, g.rem(12));
+    margin: 0 8px;
+    color: var(--c-sub);
+  }
+}
+
+.c-breadcrumb span {
+  display: inline-block;
+}
+
+.c-breadcrumb span > a {
+  display: inline-block;
+  color: #888;
+  padding: g.rem(16) 0;
+  @include g.mq("md") {
+    padding: g.rem(16) 0;
+  }
+}
+
+.c-breadcrumb span > span {
+  color: var(--c-sub);
+  display: inline-block;
+  padding: g.rem(16) 0;
+  @include g.mq("md") {
+    padding: g.rem(16) 0;
+  }
+}

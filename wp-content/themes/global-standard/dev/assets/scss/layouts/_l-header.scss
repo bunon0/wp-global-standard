@@ -1,0 +1,59 @@
+@use "global/" as g;
+
+.l-header {
+  height: 60px;
+  z-index: g.z-index("header");
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--c-base);
+
+  @include g.mq("xl") {
+    height: 100px;
+  }
+}
+
+.l-header__inner {
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 g.rem(20);
+
+  @include g.mq("md") {
+    padding: 0 g.rem(16);
+  }
+}
+
+.l-header__logo {
+  width: g.rem(198);
+  height: 100%;
+
+  @include g.mq("xl") {
+    width: g.rem(283);
+  }
+}
+
+.l-header__hamburger {
+  margin-left: auto;
+
+  @include g.mq("xl") {
+    display: none;
+  }
+}
+
+.l-header__btn-wrapper {
+  display: none;
+  @include g.mq("xl") {
+    display: flex;
+    margin-left: g.rem(32);
+    width: g.rem(362);
+    flex: 1;
+    justify-content: flex-end;
+  }
+}
+
+.l-header__btn:not(:first-child) {
+  margin-left: g.rem(10);
+}
